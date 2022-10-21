@@ -4,6 +4,7 @@
 /**
  * print_diagonal - draws a diagonal line
  * @n: numbers of '\' to be printed
+ * Return: Always 0.
  */
 void print_diagonal(int n)
 {
@@ -16,7 +17,9 @@ void print_diagonal(int n)
 	{
 		for (y = 0; y < x; y++)
 			_putchar(' ');
+
 		_putchar('\\');
 		_putchar('\n');
 	}
+	return (0);
 }
