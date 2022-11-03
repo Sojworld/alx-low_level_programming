@@ -1,20 +1,29 @@
 #include "main.h"
 
 /**
- * test - tests if wildcard match properly
- * @s5: string to compare
- * @s6: wildcard match to compare
- * @t5: first spot that was checked
- * @t6: first spot in wildcard comparison
- *
- * Return: spot that matches or NULL
+ * wildcmp - Comapre strings
+ * @s1: pointer to string params
+ * @s2: pointer to string params
+ * Return: 0
  */
-char *test(char *s5, char *s6, char *t5, char *t6)
+
+int wildcmp(char *s1, char *s2)
 {
-	if (*s6 == '*' || (*s5 == '\0' && *s6 == '\0'))
-		return (t5);
-	else if (*s5 != *s6)
-		return (wildcard(s5, t6));
-	else
-		return (test(s5 + 1, s6 + 1, t5, t6));
+	if (*s1 == '\0')
+	{
+		if (*s2 != '\0' && *s2 == '*')
+		{
+			return (wildcmp(s1, s2 + 1);
+					}
+					return (*s2 == '\0');
+					}
+					if (*s2 == '*')
+					{
+					return (wildcmp(s1 + 1, s2) || wildcmp(s1, s2 + 1));
+					}
+					else if (*s1 == *s2)
+					{
+					return (wildcmp(s1 + 1, s2 + 1));
+					}
+					return (0);
 }
