@@ -1,29 +1,23 @@
-#include "main.h"
-
-/**
- * wildcmp - Comapre strings
- * @s1: pointer to string params
- * @s2: pointer to string params
- * Return: 0
+/*
+ * File: 101-wildcmp.c
+ * Auth: Sojworld
  */
 
-int wildcmp(char *s1, char *s2)
+#include "main.h"
+
+int strlen_no_wilds(char *str);
+void iterate_wild(char **wildstr);
+char *postfix_match(char *str, char *postfix);
+int wildcmp(char *s1, char *s2);
+
+/**
+ * strlen_no_wilds - Returns the lengh of a string,
+ * ignoring wildcard characters.
+ * @str: The string to be measured.
+ *
+ * Return: The lenght.
+ */
+int strlen_no_wilds(char *str)
 {
-	if (*s1 == '\0')
-	{
-		if (*s2 != '\0' && *s2 == '*')
-		{
-			return (wildcmp(s1, s2 + 1);
-					}
-					return (*s2 == '\0');
-					}
-					if (*s2 == '*')
-					{
-					return (wildcmp(s1 + 1, s2) || wildcmp(s1, s2 + 1));
-					}
-					else if (*s1 == *s2)
-					{
-					return (wildcmp(s1 + 1, s2 + 1));
-					}
-					return (0);
+	int len = 0, index = 0;
 }
