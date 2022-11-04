@@ -1,45 +1,30 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <main.h>
-#define UNUSED(x)(void)(x)
 /**
- * main - adds two numbers
- * @argc:int
- * @argv:array of strings
- * Return: sum if all digits
+ * main - adds positive numbers
+ * @argc: argument count
+ * @argv: argument vector for values
+ *
+ * Return: Always 0 (Success)
  */
 int main(int argc, char *argv[])
 {
-	int i;
-	int j;
-	int c;
-	int sum;
-	char *s;
+	int i, j, sum;
 
 	sum = 0;
-	c = 0;
 
-	i = 1;
-	while (i < argc)
+	for (i = 1; i < argc ; i++)
 	{
-		s = argv[i];
-		j = 0;
-		while (s[j] != '\0')
+		for (j = 0; argv[i][j] != '\0' ; j++)
 		{
-			if (s[j] < '0' || s[j] > '9')
+			if (argv[i][j] < 47 || argv[i][j] > 57)
 			{
 				printf("Error\n");
 				return (1);
 			}
-			j++;
 		}
-		i++;
-	}
-
-	for (i = 1; i < argc; i++)
-	{
-		c = atoi(argv[i]);
-		sum = sum + c;
+		sum = sum + atoi(argv[i]);
 	}
 	printf("%d\n", sum);
 	return (0);
