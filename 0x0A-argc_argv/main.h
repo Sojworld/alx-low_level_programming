@@ -1,6 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-int_putchar(char c);
-int main(int argc, char *argv[]);
+int_putchar(char);
+
 #endif
